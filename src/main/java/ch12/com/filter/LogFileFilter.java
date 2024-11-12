@@ -13,6 +13,7 @@ import java.io.IOException;
 
 
 public class LogFileFilter implements Filter {
+	PrintWriter writer;
 	@Override
 	public void init(FilterConfig filterConfig) 
 			throws ServletException {
@@ -40,9 +41,9 @@ public class LogFileFilter implements Filter {
 			) throws IOException, ServletException {
 		System.out.println("Filter03.jsp 수행...");
 		
-		FileWriter.printf("현재일시: %s %n", getCurrentTime());
+		writer.printf("현재일시: %s %n", getCurrentTime());
 		String clientAddr = req.getRemoteAddr();
-		writer.println("클라인언트 주소: %s %n ", clientAddr);
+		writer.printf("클라인언트 주소: %s %n ", clientAddr);
 		
 		
 		filterChain.doFilter(req,  res); // 없으면 여기까지 수행하고 멈춤

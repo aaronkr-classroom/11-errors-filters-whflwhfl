@@ -8,7 +8,7 @@ import jakarta.servlet.FilterConfig;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.ServletRequest;
 import jakarta.servlet.ServletResponse;
-public class initParamFilter implements Filter {
+public class InitParamFilter implements Filter {
 	private FilterConfig filterConfig = null;
 	@Override
 	public void init(FilterConfig filterConfig) 
